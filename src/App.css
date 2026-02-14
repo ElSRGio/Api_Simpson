@@ -1,0 +1,87 @@
+:root {
+  --yellow: #FFD90F;
+  --blue: #42AAFF;
+  --black: #000000;
+}
+
+/* Eliminar margenes por defecto del navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-layout {
+  display: flex; /* Usamos flex para mejor control de pantalla completa */
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; /* Evita scroll doble */
+}
+
+/* BARRA LATERAL */
+.sidebar {
+  width: 350px;
+  background-color: var(--yellow);
+  border-right: 4px solid var(--black);
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.details-card img {
+  width: 100%;
+  border: 3px solid black;
+  border-radius: 8px;
+  background: white;
+  margin-bottom: 15px;
+}
+
+/* CONTENIDO PRINCIPAL (ZONA AZUL) */
+.content {
+  flex: 1; /* Esto hace que ocupe el resto de la pantalla */
+  background-color: var(--blue);
+  padding: 25px;
+  overflow-y: auto; /* Permite scroll solo en la lista de personajes */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.simpson-input {
+  width: 100%;
+  max-width: 600px;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  border: 3px solid black;
+  border-radius: 25px;
+}
+
+/* CUADRÍCULA DE PERSONAJES */
+.character-grid {
+  display: grid;
+  /* Se ajusta automáticamente al ancho disponible */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+  gap: 20px;
+}
+
+.character-card {
+  background: white;
+  border: 3px solid black;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.character-card:hover {
+  transform: scale(1.03);
+  background-color: #fff9c4;
+}
+
+.character-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+}

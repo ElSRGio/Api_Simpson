@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply m-0 p-0 overflow-hidden;
+  }
+
+  /* Ocultar scrollbar globalmente */
+  * {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+
+  *::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+}
+
+/* Scrollbar personalizado estilo Simpson */
+.custom-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Animaciones personalizadas */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes spring {
+  0% { transform: scale(0.5); opacity: 0; }
+  70% { transform: scale(1.05); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-spring {
+  animation: spring 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Estilos para la barra de búsqueda */
+.search-input {
+  @apply shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] transition-all duration-300;
+}
+
+.search-input:hover {
+  @apply scale-105 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)];
+}
+
+.search-input:focus {
+  @apply scale-110 ring-4 ring-yellow-400 shadow-[10px_10px_0px_0px_rgba(0,0,0,1)];
+}
