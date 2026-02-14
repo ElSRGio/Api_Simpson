@@ -30,13 +30,9 @@ export const Footer = () => {
           </a>
         </nav>
 
-        {/* DERECHOS RESERVADOS */}
         <div className="border-t-2 border-[#FFD90F] pt-1 text-center w-full">
           <p className="text-xs font-bold leading-none">
             © {currentYear} Simpson API. Todos los derechos reservados.
-          </p>
-          <p className="text-xs text-gray-400 leading-none">
-            Desarrollado con ❤️ | The Simpsons © Fox
           </p>
         </div>
       </div>

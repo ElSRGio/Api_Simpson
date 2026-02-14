@@ -1,5 +1,5 @@
 import { Home } from './pages/Home';
-import './index.css'; // Importante importar los estilos
+import './index.css';
 
 function App() {
   return <Home />;

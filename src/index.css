@@ -4,31 +4,21 @@
 
 @layer base {
   body {
-    @apply m-0 p-0 overflow-hidden;
-  }
-
-  /* Ocultar scrollbar globalmente */
-  * {
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE/Edge */
-  }
-
-  *::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
+    @apply bg-blue-400 font-sans antialiased text-black overflow-x-hidden;
   }
 }
 
-/* Scrollbar personalizado estilo Simpson */
-.custom-scrollbar {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-black;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-yellow-400 rounded-full border-2 border-black;
 }
 
-.custom-scrollbar::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
-}
-
-/* Animaciones personalizadas */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -48,7 +38,6 @@
   animation: spring 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Estilos para la barra de búsqueda */
 .search-input {
   @apply shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] transition-all duration-300;
 }
